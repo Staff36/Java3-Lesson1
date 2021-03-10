@@ -14,20 +14,21 @@ public class MyBox <T extends Fruit> implements Comparable<MyBox>{
     public void add(T fruit){
         data.add(fruit);
     }
-    public int getBoxWeight(){
-        int result = 0;
-        for (T fruit:data) {
-            result+=fruit.getWeight();
+
+    public float getBoxWeight(){
+        float result = 0;
+        for (T fruit : data) {
+            result += fruit.getWeight();
         }
         return result;
     }
+
     public void pourFruit(MyBox<T> box){
-      for (T fruit:data) {
+      for (T fruit : data) {
         box.add(fruit);
       }
       data.clear();
     }
-
 
     public boolean compare(MyBox box){
         return compareTo(box) == 0;
@@ -44,10 +45,7 @@ public class MyBox <T extends Fruit> implements Comparable<MyBox>{
     }
 
     public void display(){
-        for (T fruit:data) {
-            System.out.println(fruit);
-
-        }
+        System.out.println("Box contain "+data.size()+" fruits");
     }
 
 }

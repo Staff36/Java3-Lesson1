@@ -3,7 +3,6 @@ package com.Lesson1;
 import com.Lesson1.Fruits.Apple;
 import com.Lesson1.Fruits.Orange;
 import java.util.List;
-import java.util.Random;
 
 public class Main {
 
@@ -15,7 +14,6 @@ public class Main {
     public static void taskOneAndTwo(){
         System.out.println("Task one and two\n" +
                 "Creating new array:");
-
         TestArray<Integer> integerTestArray = new TestArray<>();
         for (int i = 0; i < integerTestArray.getCapacity(); i++) {
             integerTestArray.add(i+1);
@@ -29,16 +27,16 @@ public class Main {
         List testList= integerTestArray.convertToArrayList();
         System.out.println("Displaying arrayList: "+testList);
     }
+
     public static void taskThree(){
         System.out.println("\nTask three: ");
         MyBox<Apple> appleBox1= new MyBox<>();
         MyBox<Apple> appleBox2= new MyBox<>();
         MyBox<Orange> orangeBox= new MyBox<>();
-        Random random= new Random();
-        for (int i = 0; i < 5; i++) {
-            appleBox1.add(new Apple(random.nextInt(10)));
-            appleBox2.add(new Apple(random.nextInt(10)));
-            orangeBox.add(new Orange(random.nextInt(10)));
+        for (int i = 0; i < 10; i++) {
+            appleBox1.add(new Apple());
+            appleBox2.add(new Apple());
+            orangeBox.add(new Orange());
         }
 
         appleBox1.display();

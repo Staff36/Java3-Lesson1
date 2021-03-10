@@ -23,20 +23,22 @@ public class TestArray <T>{
 
     public TestArray(int capacity) {
         this.data = (T[]) new Object[capacity];
-        this.capacity=capacity;
+        this.capacity = capacity;
     }
+
     public TestArray() {
         this(DEFAULT_CAPACITY);
     }
+
     public boolean mixUpTwoValues(int firstIndex, int secondIndex){
         if (isIncorrectIndex(firstIndex) || isIncorrectIndex(secondIndex)){
             throw new IllegalArgumentException("Incorrect index first index: "+firstIndex+
-                    ", second index: "+secondIndex+", current range 0-"+(data.length-1));
+                    ", second index: "+secondIndex+", current range 0-"+(data.length - 1));
         }
 
         T temp= data[firstIndex];
-        data[firstIndex]=data[secondIndex];
-        data[secondIndex]=temp;
+        data[firstIndex] = data[secondIndex];
+        data[secondIndex] = temp;
         return true;
     }
 
@@ -67,7 +69,5 @@ public class TestArray <T>{
             System.out.println(data[i]);
         }
     }
-
-
 
 }
