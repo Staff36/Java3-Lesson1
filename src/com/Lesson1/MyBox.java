@@ -3,6 +3,7 @@ package com.Lesson1;
 import com.Lesson1.Fruits.Fruit;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MyBox <T extends Fruit> implements Comparable<MyBox>{
     private ArrayList<T> data = new ArrayList<>();
@@ -24,9 +25,7 @@ public class MyBox <T extends Fruit> implements Comparable<MyBox>{
     }
 
     public void pourFruit(MyBox<T> box){
-      for (T fruit : data) {
-        box.add(fruit);
-      }
+        box.getData().addAll(data);
       data.clear();
     }
 
